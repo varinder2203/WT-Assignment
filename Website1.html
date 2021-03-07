@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Navigation bar</title>
+    <style >
+      html{
+    scroll-behavior: smooth;
+}
+* {padding: 0; margin: 0; }
+body{
+    background: #312244;
+}
+.flex-container  {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+      background: #f4978e;
+}
+
+.logo {
+  margin: 0 0 0 .45em;
+  
+}
+    .logo a {
+      color: rgb(28, 24, 22);
+    }
+
+    .logo, .navigation {
+        list-style: none;
+        text-transform: uppercase;
+      
+    }
+
+    .logo a, .navigation a {
+        text-decoration: none;
+        letter-spacing: .45rem;
+      
+    }
+
+.navigation  {
+  display: flex;
+}
+
+.navigation a {
+  display: block;
+  padding: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.navigation a:hover {
+    background: #c5b8ff;
+}
+
+
+@media all and (max-width: 990px) {
+  .flex-container {
+    flex-direction: column;
+  }
+  
+  .logo {
+  margin: 0;
+}
+  
+  .navigation  {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+
+
+@media all and (max-width: 600px) {
+ 
+  .logo {
+    margin: .25em 0;
+    align-self: left; 
+}
+  
+  .navigation {
+    flex-direction: column;
+  }
+  
+  .navigation a { 
+    text-align: center; 
+    padding: 10px;
+     
+  }
+  
+  
+}
+
+.bgImage{
+    width: 100%;
+    height: 100vh;
+}
+
+
+
+.flipCardContainer{
+    display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+  }
+  #avtarImg{
+    width: 100%;
+    height: 300px;
+}
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+#fcb1{
+    background-color: #ef476f;
+    color: white;
+    transform: rotateY(180deg);
+}
+#fcb2{
+    background-color: #ffd166;
+    color: white;
+    transform: rotateY(180deg);
+}
+#fcb3{
+    background : #06d6a0;
+    color: black;
+    transform: rotateY(180deg);
+}
+#fcb4{
+    background-color: #118ab2;
+    color: white;
+    transform: rotateY(180deg);
+}
+footer {
+    text-align: center;
+    padding: 5px;
+    background: rgb(253, 243, 208);
+    text-decoration: none;
+    color: #f4978e;
+    font-weight: 800;
+  }
+    </style>
+</head>
+<body bgcolor="f4978e">
+    <!-- Navigation bar -->
+    <div class="flex-container">
+        <h1 class="logo"><a href="#1">Cars...</a></h1>
+        <ul class="navigation">
+          <li><a href="#">Home</a></li>
+          <li><a href="#bgContainer">Cover IMG</a></li>
+          <li><a href="#flipCardContainer">Cards</a></li>
+          <li><a href="#footerContainer">footer</a></li>
+        </ul>
+      </div>
+
+
+      <!-- Cover Image -->
+
+      <div class="bgContainer" id="bgContainer">
+      <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8Y2Fyc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60https://images.unsplash.com/photo-1611179672998-a3f08d00fb76?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTF8fG9sZCUyMGNhcnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="bgImage">
+      </div>
+
+
+
+      <!-- Flip Cards -->
+      <div class="flipCardContainer" id="flipCardContainer">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTZ8fGNhcnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Avatar" id="avtarImg">
+          </div>
+          <div class="flip-card-back" id="fcb1">
+            <h1>Car 1</h1> 
+            <p>Mercedes AMG 63</p> 
+            <p>Yellow</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8Y2Fyc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Avatar" id="avtarImg">
+          </div>
+          <div class="flip-card-back"  id="fcb2">
+            <h1>Car 2</h1> 
+            <p>Merceded GLS</p> 
+            <p>Grey</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.unsplash.com/photo-1612330291596-87b96140bd19?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjI0fHxjYXJzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Avatar" id="avtarImg">
+          </div>
+          <div class="flip-card-back"  id="fcb3">
+            <h1>Car 3</h1> 
+            <p>Supra</p> 
+            <p>Red</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.unsplash.com/photo-1594950164100-dc9142cbfb24?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzN8fGNhcnN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Avatar" id="avtarImg">
+          </div>
+          <div class="flip-card-back"  id="fcb4">
+            <h1>Car 4</h1> 
+            <p>Lamborghini</p> 
+            <p>Black</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!--Footer -->
+    <div class="footerContainer" id="footerContainer">
+        <footer >
+            <p>Miles to Walk before you Sleep:)<br>
+                <span>&copy;Varinder Rocks </span>
+          </footer>
+
+    </div>
+    
+</body>
+</html>
